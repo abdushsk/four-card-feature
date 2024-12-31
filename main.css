@@ -1,0 +1,143 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background: hsl(0, 0%, 98%);
+}
+
+.parent {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    padding: 40px;
+}
+
+.info {
+    text-align: center;
+}
+
+.title {
+    font-size: clamp(1rem, 1vw + 1rem, 10rem);
+    font-family: "Poppins";
+    font-weight: 300;
+    color: hsl(229, 6%, 66%);
+}
+
+.min-title {
+    font-weight: 600;
+    font-size: clamp(1.1rem, 1vw + 1.1rem, 10rem);
+    font-family: "Poppins";
+    color: black;
+}
+
+.des {
+    color: hsl(229, 6%, 66%);
+    font-weight: 400;
+    font-size: clamp(0.75rem, 0.7rem, 10rem);
+    padding-top: 15px;
+    font-family: "Poppins";
+}
+
+.boxes {
+    flex: 1;
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap; /* Allow wrapping */
+}
+
+.box {
+    aspect-ratio: 14 / 9; /* Maintain aspect ratio */
+    border-radius: 5px;
+    background: white;
+    padding: 20px 25px;
+    box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.2);
+    display: flex;
+    position: relative;
+    flex-direction: column;
+}
+
+.box-svg{
+    width: clamp(40px, 5vw, 50px);
+    height: auto;
+    position: absolute;
+    bottom: 20px; /* Adjust as needed */
+    right: 20px; /* Adjust as needed */
+}
+
+.col2 {
+    display: flex;
+    gap: 20px;
+    flex-direction: column;
+    aspect-ratio: auto; /* Inherit scaling behavior */
+}
+
+.col2 .box {
+    width: 100%; /* Ensure column boxes fill the column width */
+}
+
+.col1, .col2, .col3{
+    min-width: 200px;
+    max-width: 350px;
+    flex: 1;
+}
+
+
+@media only screen and (max-width: 700px) {
+    .boxes {
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    .box {
+        aspect-ratio: 14 / 9; /* Maintain aspect ratio */
+    }
+
+    /* Make all boxes take full width while maintaining aspect ratio */
+    .box, .col2 .box,.col2 {
+        width: 100%;
+    }
+
+    .des{
+        padding-bottom: 40px;
+    }
+
+    .parent{
+        height: auto;
+    }
+}
+
+.one{
+    border-top: 5px solid hsl(180, 62%, 55%);
+}
+
+.two{
+    border-top: 5px solid hsl(0, 78%, 62%);
+}
+
+.three{
+    border-top: 5px solid hsl(34, 97%, 64%);
+}
+
+.four{
+    border-top: 5px solid hsl(212, 86%, 64%);
+}
+
+.box-title{
+    font-family: "Poppins";
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    font-size: clamp(1rem, 0.3vw + 1rem, 100px);
+}
+
+.box-des{
+    font-family: "Poppins";
+    font-size: clamp(0.8rem, 0.2vw + 0.8rem, 100px);
+    padding-top: 5px;
+    color: hsl(229, 6%, 66%);
+}
